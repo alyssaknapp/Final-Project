@@ -1,0 +1,67 @@
+---
+title: "R Notebook"
+author: 'Alyssa Knapp'
+date: '11/12/20'
+output: html_notebook
+---
+
+
+```{r}
+rm(list = ls())
+
+library(mosaic)
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+library(readxl)
+```
+
+1st Data Source: 
+```{r}
+UFO <- read.csv("scrubbed.csv", header = TRUE)
+View(UFO)
+```
+
+2nd Data Source: 
+```{r}
+UFO2 <- read_excel("UFOs_coord.xlsx")
+View(UFO2)
+```
+
+
+## Become acquainted with data sources 
+
+1. y
+
+
+
+
+## Statement of Research Question
+
+```{r}
+
+```
+
+
+
+## Examine the data source
+
+```{r}
+
+```
+
+
+
+## Address Research Question
+
+```{r}
+
+```
+
+
+## Discover features in the data that may impact modeling decisions
+
+```{r}
+
+```
+
