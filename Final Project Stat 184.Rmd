@@ -16,43 +16,116 @@ library(dplyr)
 library(readxl)
 ```
 
-1st Data Source: 
+Data Source 1: 
 ```{r}
 UFO <- read.csv("scrubbed.csv", header = TRUE)
-View(UFO)
 ```
 
-2nd Data Source: 
+Data Source 2: 
 ```{r}
 UFO2 <- read_excel("UFOs_coord.xlsx")
-View(UFO2)
 ```
 
 
 ## Become acquainted with data sources 
 
-1. y
+Data Source 1
 
+1. I found this data source from kaggle.com
+
+2. This dataset is maintained by the National UFO Reporting Center (NUFORC)
+
+3. This data was compiled in 2014 by Sigmond Axel, using 80,000 reports of UFO sightings from the last century. It was collected to 
+
+4. 
+
+5. 
+
+
+Data Source 2
+
+1. I found this data source from data.world
+
+2. This dataset is maintained by data engineer, Alejandro Manuel Arranz Lopez 
+
+3. This data was collected in 2016 by the National UFO reporting center, specifically from the US/Canada reports. It was collected to 
+
+4. 
+
+5. 
 
 
 
 ## Statement of Research Question
 
-```{r}
-
-```
+**Which areas of the United States experience the most UFO sightings?**
 
 
-
-## Examine the data source
+## Examine Data Source 1
 
 ```{r}
+View(UFO)
+glimpse(UFO)
 
+favstats(~state, data = UFO)
+favstats(~city, data = UFO)
+favstats(~country, data = UFO)
+summary(UFO)
 ```
 
+There are 11 variables and 80,332 cases. 
 
 
 ## Address Research Question
+
+```{r}
+UFO_US <- mutate(UFO, country = "us")
+View(UFO_US)
+```
+
+```{r}
+
+```
+
+
+```{r}
+UFO_US %>%
+  ggplot(aes(x=state)) + 
+  geom_density(color = "blue", fill = "blue", alpha = 0.75)
+  xlab("States that recorded UFO sightings")
+```
+
+
+## Discover features in the data that may impact modeling decisions
+
+```{r}
+
+```
+
+
+
+
+
+
+## Examine Data Source 2
+
+```{r}
+View(UFO2)
+glimpse(UFO2)
+
+summary(UFO2)
+```
+
+There are 8 variables and 5,177 cases. 
+
+
+## Address Research Question
+
+```{r}
+UFO2_US <- mutate(UFO2, Country = "USA")
+View(UFO2_US)
+```
+
 
 ```{r}
 
@@ -63,5 +136,14 @@ View(UFO2)
 
 ```{r}
 
+```
+
+
+## Joining datasets
+
+```{r}
+UFO_data <-
+  UFO %>%
+  left_join(UFO2, by = 
 ```
 
